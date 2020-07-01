@@ -1,0 +1,4 @@
+<img *ngIf = 'isLoaded; else unset' [src] = 'imageSrc'>
+<ng-template #unset>  
+    <mat-spinner [diametr] = '10'></mat-spinner>  
+</ng-template> 

@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>{{data.name[0].toUpperCase()+data.name.substr(1)}} </h1>
+<div mat-dialog-content>
+    <hr>
+    <img [src] = "data.sprites.front_default">
+    <table >
+        <tr >
+            <td>Height</td>
+            <td>{{data.height}}</td>
+        </tr>
+        <tr>
+            <td>Weight</td>
+            <td>{{data.weight}}</td>
+        </tr>
+        <tr>
+            <td>Base Experience</td>
+            <td>{{data.base_experience}}</td>
+        </tr>
+        <tr>
+            <td>Types</td>
+            <td><span *ngFor = 'let type of data.types' [class]='type.type.name'>{{type.type.name}} </span></td>
+        </tr>
+    </table>
+    <hr>
+    <div>
+        <h2>Stats</h2>
+        <table class='stats'>
+            <tr *ngFor="let stat of data.stats">
+                <td>{{stat.stat.name.toUpperCase()}}</td>
+                <td>{{stat.base_stat}}</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <h2>Abilities</h2>
+    <mat-tab-group>
+        <mat-tab *ngFor = "let ability of data.abilities" [label]="ability.ability.name"><app-ability [url] = "ability.ability.url"></app-ability>  </mat-tab>
+      </mat-tab-group>
+      <hr>
+      <h2>Evolution Chain</h2>
+      <app-evolution-chain [speciesUrl] = "data.species.url"></app-evolution-chain>
+      <hr>
+    
+</div>

@@ -1,0 +1,35 @@
+.mat-button{
+    width:100%;
+}
+img{
+    width:40%;
+    image-rendering: pixelated;
+}
+table{
+    width: 60%;
+    border-spacing: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+td:first-child{
+    font-weight: bold;
+    width:50%;
+}
+td:last-child{
+    text-align: right;
+    width:100%;
+}
+
+.stats{
+    width:100%;
+}
+
+.stats td:last-child{
+    text-align: right;
+}
+.stats td{
+    width:15%;
+    background-color: lightgray;
+    padding:5px;
+}
+

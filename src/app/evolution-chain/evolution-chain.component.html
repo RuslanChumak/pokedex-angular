@@ -1,0 +1,6 @@
+<div *ngIf = 'isLoaded; else unset'>
+    <app-el-of-chain  *ngFor = 'let item of evoChain' [name] = "item"></app-el-of-chain>
+</div>
+<ng-template #unset>
+    <mat-spinner [diametr] = '10'></mat-spinner>  
+</ng-template>

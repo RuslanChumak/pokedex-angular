@@ -1,0 +1,14 @@
+<mat-card *ngIf = 'isLoaded; else unset'>
+    <mat-card-title>{{info.name[0].toUpperCase()+info.name.substr(1)}} </mat-card-title>
+    <div><span *ngFor = 'let type of pokemon.types' [class]='type.type.name'>{{type.type.name}} </span></div>
+    <mat-card-content>
+        <img *ngIf = 'isImg; else placeholderImg' [src] = "pokemon.sprites.front_default"  mat-card-image>
+    </mat-card-content>
+    <button mat-raised-button (click) = "handleDetails()" color='primary'>Details</button>
+</mat-card>
+<ng-template #unset>  
+    <mat-spinner [diametr] = '10'></mat-spinner>  
+</ng-template> 
+<ng-template #placeholderImg>  
+    <img src='../../assets/images.png' mat-card-image>
+</ng-template> 

@@ -1,0 +1,4 @@
+<p *ngIf = 'isLoaded; else unset'>{{ability[0].effect}}</p>
+<ng-template #unset>  
+    <mat-spinner [diametr] = '10'></mat-spinner>  
+</ng-template> 
